@@ -58,9 +58,9 @@ const SpotifyNowPlaying = (props) => {
     <li><span style={{ fontWeight: 'bold' }}>Hiking.</span> <a href="https://www.peaksandprofessors.org/" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}>Think Outside</a>.</li>
-        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/20518872-the-three-body-problem" 
+        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/60321447-chip-war?ac=1&from_search=true&qid=iO9FUj9TGF&rank=1" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>The Three Body Problem</a>.
+        fontWeight: 'bold' }}>Chip War</a>.
         <br />
         These have had the greatest impact on my worldview.</li>
         
