@@ -39,7 +39,9 @@ const SpotifyNowPlaying = (props) => {
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}> WilsonLimSet</a> on GitHub, my full name on <a href="https://www.linkedin.com/in/wilsonlimsetiawan/" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>LinkedIn</a> and wilsonlimsetiawan@gmail.com on email.</Text> 
+        fontWeight: 'bold' }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://www.youtube.com/watch?v=vPCLIFs6KwI" 
+        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
+        fontWeight: 'bold' }}> resume</a> .</Text> 
 <br />
 <Text>Things I'm involved with and areas of interest: </Text> 
 
