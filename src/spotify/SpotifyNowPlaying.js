@@ -39,9 +39,9 @@ const SpotifyNowPlaying = (props) => {
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}> WilsonLimSet</a> on GitHub, my full name on <a href="https://www.linkedin.com/in/wilsonlimsetiawan/" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://www.youtube.com/watch?v=vPCLIFs6KwI" 
+        fontWeight: 'bold' }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://drive.google.com/file/d/1HDtAPa7kIMSP3kFPy8znur1PIKGXnHy1/view?usp=sharing" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> resume</a> .</Text> 
+        fontWeight: 'bold' }}> resume</a>.</Text> 
 <br />
 <Text>Things I'm involved with and areas of interest: </Text> 
 
@@ -49,6 +49,9 @@ const SpotifyNowPlaying = (props) => {
     <li><span style={{ fontWeight: 'bold' }}>Youtube.</span> Creating <a href="https://www.youtube.com/channel/UCH59qgZdA_fA5lTlmiQzNBQ" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}> content</a> that makes me content.</li>
+    <li><span style={{ fontWeight: 'bold' }}>Developing.</span> Building <a href="https://stickergoals.xyz/" 
+        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
+        fontWeight: 'bold' }}> Sticker</a>.</li>    
     <li><span style={{ fontWeight: 'bold' }}>Podcasting.</span> Learning from others to get <a href="https://open.spotify.com/show/7jDxgVTztsskpDLGuyORNJ?si=f6eaf639f0894aed" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}> 1% better</a>.</li>
