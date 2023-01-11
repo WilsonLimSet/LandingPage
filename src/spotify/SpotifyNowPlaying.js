@@ -60,6 +60,10 @@ const SpotifyNowPlaying = (props) => {
         fontWeight: 'bold' }}>Singaporean</a> and <a href="https://www.instagram.com/uscasis/?hl=en" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}>Indonesian</a> roots.</li>
+    <li><span style={{ fontWeight: 'bold' }}>Machine Learning.</span> My  <a href="https://docs.google.com/document/d/1dLdEpBvZZ8ifsv36gxF9Hn8xURvwOW7LA8llFX9ptMA/edit" 
+        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
+        fontWeight: 'bold' }}> teaching assistant</a>tour of duty.</li>    
+    
     <li><span style={{ fontWeight: 'bold' }}>Hiking.</span> <a href="https://www.peaksandprofessors.org/" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}>Think Outside</a>.</li>
