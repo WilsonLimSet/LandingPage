@@ -71,6 +71,7 @@ const SpotifyNowPlaying = (props) => {
         <br />
         These have had the greatest impact on my worldview.</li>
         <BooksGrid />
+      
         
         
         
