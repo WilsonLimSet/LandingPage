@@ -1,3 +1,6 @@
+const axios = require('axios');
+
+
 async function getSleepData() {
     const apiKey = process.env.REACT_APP_CLIENT_ID;
     const headers = new Headers({

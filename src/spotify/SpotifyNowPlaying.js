@@ -65,9 +65,9 @@ const SpotifyNowPlaying = (props) => {
     <li><span style={{ fontWeight: 'bold' }}>Hiking.</span> <a href="https://www.peaksandprofessors.org/" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
         fontWeight: 'bold' }}>Think Outside</a>.</li>
-        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/60321447-chip-war?ac=1&from_search=true&qid=iO9FUj9TGF&rank=1" 
+        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/62296528-spare" 
         target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>Chip War</a>.
+        fontWeight: 'bold' }}>Spare</a>.
         <br />
         These have had the greatest impact on my worldview.</li>
         <BooksGrid />
