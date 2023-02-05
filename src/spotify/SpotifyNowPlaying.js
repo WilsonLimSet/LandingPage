@@ -125,7 +125,9 @@ const SpotifyNowPlaying = (props) => {
           </Stack>
         }
       </Box>
+
     </Center>
+    
   )
 };
 
