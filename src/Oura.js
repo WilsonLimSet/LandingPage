@@ -10,7 +10,7 @@ async function getSleepData() {
   
     const response = await fetch("https://api.ouraring.com/v2/sleep", { headers });
     const data = await response.json();
-  
+    //Whole day working on 353 and physics zz
     console.log(data);
   }
   
