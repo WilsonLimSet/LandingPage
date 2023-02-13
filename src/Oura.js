@@ -1,14 +1,23 @@
+require('dotenv').config();
+const axios = require('axios');
 
-import axios, * as others from 'axios';
+const access_token = process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN;
 
+console.log(access_token); // add this line to check the value of the access_token variable
 
-const getSleepData = async () => {
-  const response = await axios.get('https://api.ouraring.com/v2/usercollection/daily_activity', {
+const main = async () => {
+  console.log(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN);
+
+  const response = await axios.get('https://api.ouraring.com/v2/usercollection/personal_info', {
     headers: {
-      Authorization: `Bearer ${process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${access_token}`,
     }
   });
-  console.log(response.data);
+  console.log(basic);
+  console.log(access_token);
+  console.log(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN);
+
 };
 
-export default getSleepData;
+main();
+
