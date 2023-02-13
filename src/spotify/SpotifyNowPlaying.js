@@ -12,7 +12,7 @@ import getNowPlayingItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
-import getSleepData from "../Oura";
+//import getSleepData from "../Oura";
 
 
 
@@ -34,13 +34,13 @@ const SpotifyNowPlaying = (props) => {
     });
   });
 
-  useEffect(() => {
-    getSleepData(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN).then(data => {
-      setSleepData(data);
-    }).catch(error => {
-      console.error(error);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getSleepData(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN).then(data => {
+  //     setSleepData(data);
+  //   }).catch(error => {
+  //     console.error(error);
+  //   });
+  // }, []);
 
   
 
