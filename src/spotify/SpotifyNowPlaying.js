@@ -12,7 +12,9 @@ import getNowPlayingItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
-//import getSleepData from "../Oura";
+
+import getSleepData from '../Oura';
+const axios = require('axios');
 
 
 
@@ -28,21 +30,13 @@ const SpotifyNowPlaying = (props) => {
         props.client_secret,
         props.refresh_token
       ),
-    ]).then((results) => {
-      setResult(results[0]);
-      setLoading(false);
-    });
+      getSleepData()
+  ]).then((results) => {
+    setResult(results[0]);
+    setSleepData(results[1]);
+    setLoading(false);
   });
-
-  // useEffect(() => {
-  //   getSleepData(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN).then(data => {
-  //     setSleepData(data);
-  //   }).catch(error => {
-  //     console.error(error);
-  //   });
-  // }, []);
-
-  
+}, []);
 
   return (
     <Center>

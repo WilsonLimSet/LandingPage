@@ -1,23 +1,22 @@
-require('dotenv').config();
 const axios = require('axios');
+const getSleepData = async () => {
+  let date = new Date();
+  date.setDate(date.getDate() - 1);
 
-const access_token = process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN;
 
-console.log(access_token); // add this line to check the value of the access_token variable
+    console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
+    // Try making the API request with the current date first
+    const response = await axios.get(`https://api.ouraring.com/v2/usercollection/daily_sleep?start_date=${date.toISOString().slice(0, 10)}`, {
+      headers: {
+        //problem here Authorization: `Bearer `,
+      }
+    });
 
-const main = async () => {
-  console.log(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN);
+    const responseData = response.data.data;
 
-  const response = await axios.get('https://api.ouraring.com/v2/usercollection/personal_info', {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    }
-  });
-  console.log(basic);
-  console.log(access_token);
-  console.log(process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN);
-
+console.log(responseData[0].score);
+const endData = responseData[0].score;
+  
 };
 
-main();
-
+export default getSleepData;
