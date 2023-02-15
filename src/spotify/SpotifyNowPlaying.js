@@ -137,7 +137,7 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-              <Text>Sleep data: {sleepData ? JSON.stringify(sleepData) : 'N/A'}</Text>
+              <Text>Last Nights Sleep Score: {sleepData ? JSON.stringify(sleepData) : 'N/A'}</Text>
 
 
 
