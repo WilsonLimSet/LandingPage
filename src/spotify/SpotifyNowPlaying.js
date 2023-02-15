@@ -12,9 +12,7 @@ import getNowPlayingItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
-
-import getSleepData from '../Oura';
-const axios = require('axios');
+import axios from 'axios';
 
 
 
@@ -22,21 +20,30 @@ const SpotifyNowPlaying = (props) => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
-
-  useEffect(() => {
+  useEffect(async() => {
     Promise.all([
       getNowPlayingItem(
         props.client_id,
         props.client_secret,
         props.refresh_token
       ),
-      getSleepData()
+
   ]).then((results) => {
     setResult(results[0]);
-    setSleepData(results[1]);
     setLoading(false);
   });
+
+  try {
+    const response = await axios.get('/api/getSleepData');
+    const score = response.data.score;
+    setSleepData(score);
+  } catch (error) {
+    console.error(error);
+  }
 }, []);
+
+
+
 
   return (
     <Center>
@@ -130,7 +137,10 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-            <p>Sleep data: {JSON.stringify(sleepData)}</p>
+              <Text>Sleep data: {sleepData ? JSON.stringify(sleepData) : 'N/A'}</Text>
+
+
+
           </Stack>
         }
       </Box>
