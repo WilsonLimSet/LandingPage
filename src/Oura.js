@@ -7,7 +7,7 @@ const SleepData = () => {
   useEffect(() => {
     const fetchData = async () => {
       let date = new Date();
-      date.setDate(date.getDate() - 1);
+      date.setDate(date.getDate() - 10);
       console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
       
       const response = await axios.get(`https://api.ouraring.com/v2/usercollection/daily_sleep?start_date=${date.toISOString().slice(0, 10)}`, {
