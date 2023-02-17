@@ -25,7 +25,7 @@ const SpotifyNowPlaying = (props) => {
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
   const [sleepDate, setSleepDate] = useState({});
-  useEffect(async() => {
+  useEffect(async () => {
     Promise.all([
       getNowPlayingItem(
         props.client_id,
@@ -33,72 +33,88 @@ const SpotifyNowPlaying = (props) => {
         props.refresh_token
       ),
 
-  ]).then((results) => {
-    setResult(results[0]);
-    setLoading(false);
-  });
+    ]).then((results) => {
+      setResult(results[0]);
+      setLoading(false);
+    });
 
-  try {
-    const response = await axios.get('/api/getSleepData');
-    setSleepData(secondsToHoursMinutes(response.data.total_sleep_duration));
+    try {
+      const response = await axios.get('/api/getSleepData');
+      setSleepData(secondsToHoursMinutes(response.data.total_sleep_duration));
 
-    setSleepDate(response.data.date);
-  } catch (error) {
-    console.error(error);
-  }
-}, []);
-
-
+      setSleepDate(response.data.date);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
 
   return (
     <Center>
-       <Text>Hey, I’m Wilson Lim Setiawan. I grew up in Singapore and am currently a 
-        junior studying Computer Science at the <a href="https://www.youtube.com/watch?v=vPCLIFs6KwI" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> University of Southern California</a>.</Text>
-        <Text>Elsewhere:   <a href="https://github.com/WilsonLimSet" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> WilsonLimSet</a> on GitHub, my full name on <a href="https://www.linkedin.com/in/wilsonlimsetiawan/" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://drive.google.com/file/d/1HDtAPa7kIMSP3kFPy8znur1PIKGXnHy1/view?usp=sharing" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> resume</a>.</Text> 
-<br />
-<Text>Things I'm involved with and areas of interest: </Text> 
+      <Text>Hey, I’m Wilson Lim Setiawan. I grew up in Singapore and am currently a
+        junior studying Computer Science at the <a href="https://www.youtube.com/watch?v=vPCLIFs6KwI"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}> University of Southern California</a>.</Text>
+      <Text>Elsewhere:   <a href="https://github.com/WilsonLimSet"
+        target="_blank" style={{
+          color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+          fontWeight: 'bold'
+        }}> WilsonLimSet</a> on GitHub, my full name on <a href="https://www.linkedin.com/in/wilsonlimsetiawan/"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://drive.google.com/file/d/1HDtAPa7kIMSP3kFPy8znur1PIKGXnHy1/view?usp=sharing"
+            target="_blank" style={{
+              color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+              fontWeight: 'bold'
+            }}> resume</a>.</Text>
+      <br />
+      <Text>Things I'm involved with and areas of interest: </Text>
 
-  <ul style={{ paddingLeft: '60px' }}>
-    <li><span style={{ fontWeight: 'bold' }}>Youtube.</span> Creating <a href="https://www.youtube.com/channel/UCH59qgZdA_fA5lTlmiQzNBQ" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> content</a> that makes me content.</li>
-    <li><span style={{ fontWeight: 'bold' }}>Developing.</span> Building <a href="https://stickergoals.xyz/" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> Sticker</a>.</li>    
-    <li><span style={{ fontWeight: 'bold' }}>Podcasting.</span> Learning from others to get <a href="https://open.spotify.com/show/7jDxgVTztsskpDLGuyORNJ?si=f6eaf639f0894aed" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}> 1% better</a>.</li>
-    <li><span style={{ fontWeight: 'bold' }}>Culture.</span> Maintaining my <a href="https://usc-ssa.github.io/Singapore-Student-Association/" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>Singaporean</a> and <a href="https://www.instagram.com/uscasis/?hl=en" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>Indonesian</a> roots.</li>
-    
-    <li><span style={{ fontWeight: 'bold' }}>Hiking.</span> <a href="https://www.peaksandprofessors.org/" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>Think Outside</a>.</li>
-        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/62296528-spare" 
-        target="_blank"  style={{ color: 'blue', fontStyle: 'italic' , textDecoration: 'underline', 
-        fontWeight: 'bold' }}>Spare</a>.
-        <br />
-        These have had the greatest impact on my worldview.</li>
+      <ul style={{ paddingLeft: '60px' }}>
+        <li><span style={{ fontWeight: 'bold' }}>Youtube.</span> Creating <a href="https://www.youtube.com/channel/UCH59qgZdA_fA5lTlmiQzNBQ"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}> content</a> that makes me content.</li>
+        <li><span style={{ fontWeight: 'bold' }}>Developing.</span> Building <a href="https://stickergoals.xyz/"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}> Sticker</a>.</li>
+        <li><span style={{ fontWeight: 'bold' }}>Podcasting.</span> Learning from others to get <a href="https://open.spotify.com/show/7jDxgVTztsskpDLGuyORNJ?si=f6eaf639f0894aed"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}> 1% better</a>.</li>
+        <li><span style={{ fontWeight: 'bold' }}>Culture.</span> Maintaining my <a href="https://usc-ssa.github.io/Singapore-Student-Association/"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}>Singaporean</a> and <a href="https://www.instagram.com/uscasis/?hl=en"
+            target="_blank" style={{
+              color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+              fontWeight: 'bold'
+            }}>Indonesian</a> roots.</li>
+
+        <li><span style={{ fontWeight: 'bold' }}>Hiking.</span> <a href="https://www.peaksandprofessors.org/"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}>Think Outside</a>.</li>
+        <li><span style={{ fontWeight: 'bold' }}>Books.</span> I am currently reading <a href="https://www.goodreads.com/book/show/62296528-spare"
+          target="_blank" style={{
+            color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
+            fontWeight: 'bold'
+          }}>Spare</a>.
+          <br />
+          These have had the greatest impact on my worldview.</li>
         <BooksGrid />
-      
-        
-        
-        
-  </ul>
+      </ul>
 
-  <br />
+      <br />
       <Box width="xs">
         {loading ?
           <Stack align="center" mb={8}>
@@ -142,20 +158,17 @@ const SpotifyNowPlaying = (props) => {
                   </Stack>
                 </Stack>
               </Box>
+              
             }
-            
-
-
-
-
+             <Text>My sleep for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
           </Stack>
         }
-        <Text>My sleep for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? JSON.stringify(sleepData) : 'Sleep Score Error'} </Text>
+       
       </Box>
-      
+
 
     </Center>
-    
+
   )
 };
 
