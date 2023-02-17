@@ -40,8 +40,8 @@ const SpotifyNowPlaying = (props) => {
 
   try {
     const response = await axios.get('/api/getSleepData');
-    setSleepData(response.data.total_sleep_duration);
-    
+    setSleepData(secondsToHoursMinutes(response.data.total_sleep_duration));
+
     setSleepDate(response.data.date);
   } catch (error) {
     console.error(error);
