@@ -143,7 +143,7 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-            <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? JSON.stringify(sleepData) : 'Sleep Score Error'} </Text>
+            
 
 
 
@@ -151,6 +151,7 @@ const SpotifyNowPlaying = (props) => {
           </Stack>
         }
       </Box>
+      <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? JSON.stringify(sleepData) : 'Sleep Score Error'} </Text>
 
     </Center>
     
