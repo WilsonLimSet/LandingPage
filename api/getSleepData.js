@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
 
     const responseData = response.data.data;
     const endData = responseData[0].score;
+    const dateData = responseData[0].day;
 
     return res.status(200).json({ score: endData });
   } catch (error) {

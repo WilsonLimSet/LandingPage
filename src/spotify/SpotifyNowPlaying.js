@@ -20,6 +20,7 @@ const SpotifyNowPlaying = (props) => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
+  const [sleepDate, setSleepDate] = useState({});
   useEffect(async() => {
     Promise.all([
       getNowPlayingItem(
@@ -36,7 +37,9 @@ const SpotifyNowPlaying = (props) => {
   try {
     const response = await axios.get('/api/getSleepData');
     const score = response.data.score;
+    const day = response.data.day;
     setSleepData(score);
+    setSleepDate(date);
   } catch (error) {
     console.error(error);
   }
@@ -137,7 +140,8 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-              <Text>Last Nights Sleep Score: {sleepData ? JSON.stringify(sleepData) : 'No Sleep Data Yet'}</Text>
+            <Text>Last Nights Sleep Score: {sleepData ? JSON.stringify(sleepData) : 'No Sleep Data Yet'}</Text>
+              <Text>Last Night: {sleepDate ? JSON.stringify(sleepDate) : 'No Sleep Data Yet'}</Text>
 
 
 
