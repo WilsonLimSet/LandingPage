@@ -39,7 +39,7 @@ const SpotifyNowPlaying = (props) => {
     const score = response.data.score;
     const day = response.data.day;
     setSleepData(score);
-    setSleepDate(date);
+    setSleepDate(day);
   } catch (error) {
     console.error(error);
   }
