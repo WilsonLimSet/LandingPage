@@ -40,8 +40,9 @@ const SpotifyNowPlaying = (props) => {
 
   try {
     const response = await axios.get('/api/getSleepData');
-    setSleepData(response.data.total_sleep_duration);
-    setSleepDate( secondsToHoursMinutes(response.data.date));
+    setSleepData(response.data.score);
+    
+    setSleepDate(response.data.date);
   } catch (error) {
     console.error(error);
   }
@@ -142,7 +143,7 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-            <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
+            <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? JSON.stringify(sleepData) : 'Sleep Score Error'} </Text>
 
 
 
