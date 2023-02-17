@@ -14,7 +14,11 @@ import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
 import axios from 'axios';
 
-
+function secondsToHoursMinutes(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  return hours + " hours " + minutes + " minutes";
+}
 
 const SpotifyNowPlaying = (props) => {
   const [loading, setLoading] = useState(true);
@@ -37,7 +41,8 @@ const SpotifyNowPlaying = (props) => {
   try {
     const response = await axios.get('/api/getSleepData');
     setSleepData(response.data.score);
-    setSleepDate(response.data.date);
+    
+    setSleepDate( secondsToHoursMinutes(response.data.date));
   } catch (error) {
     console.error(error);
   }
@@ -138,7 +143,7 @@ const SpotifyNowPlaying = (props) => {
                 </Stack>
               </Box>
             }
-            <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? JSON.stringify(sleepData) : 'Sleep Score Error'} </Text>
+            <Text>Sleep Score for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
 
 
 
