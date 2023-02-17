@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     const endData = responseData[0].score;
     const dateData = responseData[0].day;
 
-    return res.status(200).json({ score: endData });
+    return res.status(200).json({ score: endData, date: dateData });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Failed to retrieve sleep data' });
