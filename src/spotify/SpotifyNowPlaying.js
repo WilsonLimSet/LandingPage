@@ -13,6 +13,7 @@ import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
 import axios from 'axios';
+import OuraRingLogo from "../OuraRingLogo";
 
 function secondsToHoursMinutes(seconds) {
   const hours = Math.floor(seconds / 3600);
@@ -65,7 +66,7 @@ const SpotifyNowPlaying = (props) => {
           target="_blank" style={{
             color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
             fontWeight: 'bold'
-          }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://drive.google.com/file/d/1HDtAPa7kIMSP3kFPy8znur1PIKGXnHy1/view?usp=sharing"
+          }}>LinkedIn</a>, wilsonlimsetiawan@gmail.com on email, and my <a href="https://drive.google.com/file/d/1knuNp4i0lVCiXnqKfYvzXSKC2j-ZEXgY/view?usp=sharing"
             target="_blank" style={{
               color: 'blue', fontStyle: 'italic', textDecoration: 'underline',
               fontWeight: 'bold'
@@ -160,6 +161,7 @@ const SpotifyNowPlaying = (props) => {
               </Box>
               
             }
+           
              <Text>My sleep for {sleepDate ? sleepDate : 'Date Error'}: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
           </Stack>
         }
