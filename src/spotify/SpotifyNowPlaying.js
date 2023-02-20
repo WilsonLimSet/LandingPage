@@ -163,7 +163,7 @@ const SpotifyNowPlaying = (props) => {
             }
             <Stack spacing={2} direction="row" align="center">
             <OuraRingLogo />
-            <Text>{sleepDate ? sleepDate : 'Date Error'} Sleep: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
+            <Text fontWeight="semibold">{sleepDate ? sleepDate : 'Date Error'} Sleep: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
               
             </Stack>
             
