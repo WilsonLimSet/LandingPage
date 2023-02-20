@@ -2,11 +2,19 @@ import React from 'react';
 import Oura from './oura.png';
 
 const OuraRingLogo = () => (
-    <div style={{ width: '20px', height: '20px', overflow: 'hidden' , borderRadius: '50%'}}>
-        <img src={Oura} alt="Profile picture" style={{ width: '100%', height: '100%', objectFit: 'cover',  clipPath: 'circle(50% at 50% 50%)' }} />
-    </div>
+    <svg width="20px" height="20px" viewBox="0 0 20 20">
+        <defs>
+            <clipPath id="circle">
+                <circle cx="50%" cy="50%" r="50%" />
+            </clipPath>
+        </defs>
+        <image href={Oura} width="20" height="20" clipPath="url(#circle)" />
+    </svg>
 );
 
 export default OuraRingLogo;
+
+
+
 
 
