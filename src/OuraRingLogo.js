@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OuraRingLogo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="240.000000pt" height="240.000000pt" viewBox="0 0 240.000000 240.000000" preserveAspectRatio="xMidYMid meet">
+    <svg width="20px" x="0px" y="0px" viewBox="0 0 20 20" style={{ enableBackground: "new 0 0 20 20" }}>
 <metadata>
 Created by potrace 1.16, written by Peter Selinger 2001-2019
 </metadata>
