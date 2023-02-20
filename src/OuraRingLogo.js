@@ -1,5 +1,5 @@
 import React from 'react';
-import Oura from './Oura.jpg';
+import Oura from './oura.png';
 
 const OuraRingLogo = () => (
     <div style={{ width: '25px', height: '25px', borderRadius: '50%', overflow: 'hidden' }}>
