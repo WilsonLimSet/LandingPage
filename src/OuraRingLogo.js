@@ -2,7 +2,7 @@ import React from 'react';
 import Oura from './oura.png';
 
 const OuraRingLogo = () => (
-    <svg width="20px" height="20px" viewBox="0 0 20 20">
+    <svg width="20px" x="0px" y="0px" viewBox="0 0 20 20">
         <defs>
             <clipPath id="circle">
                 <circle cx="50%" cy="50%" r="50%" />
