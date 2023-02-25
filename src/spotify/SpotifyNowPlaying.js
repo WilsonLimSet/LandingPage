@@ -26,6 +26,10 @@ const SpotifyNowPlaying = (props) => {
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
   const [sleepDate, setSleepDate] = useState({});
+  const sleepDataText = useMemo(() => {
+    return `Sleep: ${secondsToHoursMinutes(sleepData.total_sleep_duration)}`;
+  }, [sleepData.total_sleep_duration]);
+
   useEffect(async () => {
     Promise.all([
       getNowPlayingItem(
@@ -41,7 +45,7 @@ const SpotifyNowPlaying = (props) => {
 
     try {
       const response = await axios.get('/api/getSleepData');
-      setSleepData(secondsToHoursMinutes(response.data.total_sleep_duration));
+      setSleepData(response.data);
 
       setSleepDate(response.data.date);
     } catch (error) {
@@ -163,7 +167,7 @@ const SpotifyNowPlaying = (props) => {
             }
             <Stack spacing={2} direction="row" align="center">
             <OuraRingLogo />
-            <Text fontWeight="semibold">{sleepDate ? sleepDate : 'Date Error'} Sleep: {sleepData ? sleepData : 'Sleep Score Error'} </Text>
+            <Text fontWeight="semibold">{sleepDate ? sleepDate : 'Date Error'} {sleepDataText ? sleepDataText : 'Sleep Score Error'}</Text>
               
             </Stack>
             
