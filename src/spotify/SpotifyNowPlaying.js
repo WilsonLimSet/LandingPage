@@ -1,12 +1,5 @@
 import React, { useEffect, useState, useMemo} from "react";
-import {
-  Box,
-  Stack,
-  Image,
-  Text,
-  Link,
-  Spinner,
-} from "@chakra-ui/react";
+import {Box,Stack,Image,Text,Link,Spinner,} from "@chakra-ui/react";
 import styled from "styled-components";
 import getNowPlayingItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
@@ -14,6 +7,8 @@ import PlayingAnimation from "./PlayingAnimation";
 import BooksGrid from "../GoodReads";
 import axios from 'axios';
 import OuraRingLogo from "../OuraRingLogo";
+import '../styles.css';
+
 
 function secondsToHoursMinutes(seconds) {
   const hours = Math.floor(seconds / 3600);
@@ -166,24 +161,16 @@ const SpotifyNowPlaying = (props) => {
                   </Stack>
                 </Stack>
               </Box>
-              
             }
              <Stack spacing={2} direction="row" align="center">
             <OuraRingLogo />
             <Text fontWeight="semibold">
             {sleepDate ? `${sleepDate} ${sleepDataText || 'Sleep Score Error'}` : 'Date Error'}
-            </Text> 
-              
-            </Stack>
-            
-           
-             
+            </Text>  
+            </Stack>   
           </Stack>
         }
-       
       </Box>
-
-
     </Center>
 
   )
