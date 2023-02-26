@@ -13,10 +13,17 @@ module.exports = async (req, res) => {
       },
     });
     const responseData = response.data.data;
+
+    if (responseData.length > 0) {
+
     const endData = responseData[0].total_sleep_duration;
     const dateData = responseData[0].day;
-
     return res.status(200).json({ total_sleep_duration: endData, date: dateData });
+    }
+    else{
+      return res.status(200).json({ message: 'No sleep data available' });
+    }
+
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Failed to retrieve sleep data' });
