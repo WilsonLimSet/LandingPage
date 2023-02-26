@@ -26,11 +26,13 @@ const SpotifyNowPlaying = (props) => {
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
   const [sleepDate, setSleepDate] = useState({});
+
   const sleepDataText = useMemo(() => {
     return `Sleep: ${secondsToHoursMinutes(sleepData.total_sleep_duration)}`;
   }, [sleepData.total_sleep_duration]);
 
   useEffect(async () => {
+    console.log(`Sleepdatatext: ${sleepDataText}`)
     Promise.all([
       getNowPlayingItem(
         props.client_id,
