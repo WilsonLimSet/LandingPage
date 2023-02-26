@@ -45,6 +45,7 @@ const SpotifyNowPlaying = (props) => {
 
     try {
       const response = await axios.get('/api/getSleepData');
+      console.log(response);
       setSleepData(response.data);
 
       setSleepDate(response.data.date);
@@ -165,9 +166,9 @@ const SpotifyNowPlaying = (props) => {
               </Box>
               
             }
-            <Stack spacing={2} direction="row" align="center">
+             <Stack spacing={2} direction="row" align="center">
             <OuraRingLogo />
-            <Text fontWeight="semibold">{sleepDate ? sleepDate : 'Date Error'} {sleepDataText ? sleepDataText : 'Sleep Score Error'}</Text>
+            <Text fontWeight="semibold">{sleepDate ? sleepDate : 'Date Error'} {sleepDataText ? sleepDataText : 'Sleep Score Error'}</Text> 
               
             </Stack>
             

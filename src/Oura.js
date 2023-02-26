@@ -13,9 +13,9 @@ module.exports = async (req, res) => {
       },
     });
     const responseData = response.data.data;
-
+    console.log(response);
     if (responseData.length > 0) {
-
+    
     const endData = responseData[0].total_sleep_duration;
     const dateData = responseData[0].day;
     return res.status(200).json({ total_sleep_duration: endData, date: dateData });
