@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = async (req, res) => {
   let date = new Date();
-  date.setDate(date.getDate()-1 );
+  //date.setDate(date.getDate()-1 );
 
   console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
 
