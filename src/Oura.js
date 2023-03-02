@@ -1,31 +1,20 @@
 const axios = require('axios');
 
-module.exports = async (req, res) => {
+const main = async () => {
   let date = new Date();
-  date.setDate(date.getDate()-1 );
+  date.setDate(date.getDate() - 1);
+  const access_token = process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN;
 
-  console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
-
-  try {
-    const response = await axios.get(`https://api.ouraring.com/v2/usercollection/sleep?start_date=${date.toISOString().slice(0, 10)}`, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_OURA_PERSONAL_ACCESS_TOKEN}`,
-      },
-    });
-    const responseData = response.data.data;
-    console.log(response);
-    if (responseData.length > 0) {
-    
-    const endData = responseData[0].total_sleep_duration;
-    const dateData = responseData[0].day;
-    return res.status(200).json({ total_sleep_duration: endData, date: dateData });
+  const response = await axios.get(`https://api.ouraring.com/v2/usercollection/daily_sleep?start_date=${date.toISOString().slice(0, 10)}`, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
     }
-    else{
-      return res.status(200).send('No sleep data available' );
-    }
+  });
+ 
+  const responseData = response.data.data;
 
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send('Failed to retrieve sleep data' );
-  }
+console.log(responseData);
+const endData = responseData[0].score;
+
 };
+main();

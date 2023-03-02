@@ -21,6 +21,11 @@ const SpotifyNowPlaying = (props) => {
   const [result, setResult] = useState({});
   const [sleepData, setSleepData] = useState({});
   const [sleepDate, setSleepDate] = useState({});
+  
+  let date = new Date();
+  date.setDate(date.getDate()-1 );
+
+  console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
 
   const sleepDataText = useMemo(() => {
     return `Sleep: ${secondsToHoursMinutes(sleepData.total_sleep_duration)}`;
