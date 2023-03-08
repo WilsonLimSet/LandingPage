@@ -25,14 +25,14 @@ const SpotifyNowPlaying = (props) => {
   let date = new Date();
   date.setDate(date.getDate()-1 );
 
-  console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
+  //console.log(`Querying data for ${date.toISOString().slice(0, 10)}`);
 
   const sleepDataText = useMemo(() => {
     return `Sleep: ${secondsToHoursMinutes(sleepData.total_sleep_duration)}`;
   }, [sleepData.total_sleep_duration]);
 
   useEffect(async () => {
-    console.log(`Sleepdatatext: ${sleepDataText}`)
+    //console.log(`Sleepdatatext: ${sleepDataText}`)
     Promise.all([
       getNowPlayingItem(
         props.client_id,
